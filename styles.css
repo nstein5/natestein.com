@@ -18,18 +18,20 @@ body {
     max-width: 1000px;
     margin: auto;
   }
+  
+header {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 10px; /* Reduce this if there's extra space */
+}
 
-  header {
-    width: 90%;
-    margin-bottom: 40px;
-  }
+h1 {
+  font-size: 2.5rem;
+  color: #9BA3B6;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 5px; /* Adjust this margin */
+}
 
-  h1 {
-    font-size: 3rem;
-    color: #9BA3B6;
-    text-shadow: 4px 4px 0 #000;
-    margin-bottom: 20px;
-  }
 
   nav ul {
     gap: 30px;
