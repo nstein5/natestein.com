@@ -57,12 +57,19 @@ section {
   p {
     font-size: 1.3rem;
   }
+.link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0073b1; /* LinkedIn's color */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-  link {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    box-shadow: 5px 5px 0 #1b1f24;
-  }
+.link:hover {
+  background-color: #005582;
+}
 }
 
 /* Mobile-specific styles */
