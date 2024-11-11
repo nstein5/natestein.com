@@ -103,9 +103,25 @@ section {
     padding: 8px 15px;
     font-size: 0.9rem;
   }
+  
+.link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0073b1; /* LinkedIn's color */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
+.link:hover {
+  background-color: #005582;
+}
   section {
     margin: 20px 0;
     padding: 15px;
+    border: 2px solid #B2D4D8; /* Add border here for mobile */
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.85);
   }
 }
