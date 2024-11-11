@@ -43,8 +43,8 @@ h1 {
   }
 
 section {
-  margin: 20px 0; /* Adjusted margin for tighter spacing */
-  padding: 15px;   /* Adjusted padding to fit content closely */
+  margin: 10px 0; /* Adjusted margin for tighter spacing */
+  padding: 10px;   /* Adjusted padding to fit content closely */
   border: 2px solid #B2D4D8;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.85);
