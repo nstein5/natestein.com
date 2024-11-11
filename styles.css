@@ -1,0 +1,101 @@
+/* Base styling for larger screens (desktop) */
+body {
+  font-family: 'Courier New', monospace;
+  background: radial-gradient(circle at center, #1b1f24, #000000);
+  color: #C3C6D1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Desktop-specific enhancements */
+@media (min-width: 1024px) {
+  body {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  header {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #9BA3B6;
+    text-shadow: 4px 4px 0 #000;
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    gap: 30px;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  section {
+    margin: 50px 0;
+    padding: 30px;
+    border: 2px solid #B2D4D8;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    box-shadow: 5px 5px 0 #1b1f24;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  section {
+    margin: 20px 0;
+    padding: 15px;
+  }
+}
