@@ -4,40 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nate's Site</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0d0d0d;
+      color: #00ff41;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Scanline effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 65, 0.03),
+        rgba(0, 255, 65, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      border: 2px solid #00ff41;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      background: rgba(0, 20, 0, 0.8);
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+      position: relative;
+    }
+
+    header::before {
+      content: "root@natestein:~$";
+      position: absolute;
+      top: -12px;
+      left: 15px;
+      background: #0d0d0d;
+      padding: 0 10px;
+      font-size: 0.9em;
+      color: #00ff41;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      text-shadow: 0 0 10px #00ff41;
+      letter-spacing: 2px;
+    }
+
+    .link-section {
+      margin: 20px 0;
+      border-left: 3px solid #00ff41;
+      padding: 15px 20px;
+      background: rgba(0, 20, 0, 0.6);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .link-section:hover {
+      background: rgba(0, 40, 0, 0.8);
+      border-left-width: 5px;
+      padding-left: 25px;
+      box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    }
+
+    .link-section::before {
+      content: ">";
+      position: absolute;
+      left: 5px;
+      color: #00ff41;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .link-section:hover::before {
+      opacity: 1;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #00cc33;
+      letter-spacing: 1px;
+    }
+
+    .link {
+      display: inline-block;
+      color: #00ff41;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #00ff41;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+
+    .link:hover {
+      background: #00ff41;
+      color: #0d0d0d;
+      box-shadow: 0 0 15px #00ff41;
+      transform: translateX(5px);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #00ff41;
+      color: #00cc33;
+      font-size: 0.9em;
+    }
+
+    /* Blinking cursor effect */
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 20px;
+      background: #00ff41;
+      animation: blink 1s infinite;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* Responsive adjustments for half-screen */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.4em;
+      }
+
+      .link-section {
+        padding: 12px 15px;
+        margin: 15px 0;
+      }
+
+      h2 {
+        font-size: 1em;
+      }
+
+      .link {
+        font-size: 0.9em;
+        padding: 6px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2em;
+      }
+
+      header::before {
+        font-size: 0.75em;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>My Links:</h1>
-  </header>
-
-  <main>
-    <section id="home">
-      <h2>GitHub:</h2>
-      <a href="https://github.com/nstein5" class="link" target="_blank">Github</a>
-    </section>
-
-    <section id="about">
-      <h2>LinkedIn:</h2>
-      <a href="https://www.linkedin.com/in/nathan-stein-a33286202/" class="link" target="_blank">LinkedIn</a>
-    </section>
+  <div class="container">
+    <header>
+      <h1>SYSTEM.LINKS<span class="cursor"></span></h1>
+    </header>
     
-        <section id="home">
-      <h2>Contact Me:</h2>
-      <a href="mailto:f8fb8fd4-4aa6-4045-881a-ebe4d9847a62@simplelogin.com" class="link" target="_blank">Email</a>
-    </section>
-    
-        <section id="home">
-      <h2>About Me:</h2>
-      <a href="http://natestein.com/about-me.html" class="link" target="_blank">About Me</a>
-    </section>
-    
-  </main>
+    <main>
+      <div class="link-section">
+        <h2>[GITHUB]</h2>
+        <a href="https://github.com/nstein5" class="link" target="_blank">ACCESS_REPOSITORY</a>
+      </div>
 
-  <footer>
-    <p>© 2025 Nate Stein</p>
-  </footer>
+      <div class="link-section">
+        <h2>[LINKEDIN]</h2>
+        <a href="https://www.linkedin.com/in/nathan-stein-a33286202/" class="link" target="_blank">VIEW_PROFILE</a>
+      </div>
+
+      <div class="link-section">
+        <h2>[CONTACT]</h2>
+        <a href="mailto:f8fb8fd4-4aa6-4045-881a-ebe4d9847a62@simplelogin.com" class="link" target="_blank">SEND_MESSAGE</a>
+      </div>
+
+      <div class="link-section">
+        <h2>[ABOUT]</h2>
+        <a href="http://natestein.com/about-me.html" class="link" target="_blank">READ_FILE</a>
+      </div>
+    </main>
+    
+    <footer>
+      <p>© 2025 NSTEIN_SYSTEMS // ALL_RIGHTS_RESERVED</p>
+    </footer>
+  </div>
 </body>
 </html>
-
-
